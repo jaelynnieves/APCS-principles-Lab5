@@ -51,7 +51,7 @@ def second_question():
         if selected == answers[4]:
             age_picker.add('elderly')
 
-    return redirect('/question/3')
+        return redirect('/question/3')
     
 
 @app.route('/question/3', methods = ['GET', 'POST'])
@@ -74,7 +74,7 @@ def third_question():
         if selected == answers[4]:
             age_picker.add('elderly')
    
-    return redirect('/age')
+        return redirect('/age')
     
 @app.route('/age')
 def get_age():

@@ -38,3 +38,4 @@ def clear(self) -> None:
         'teen': 0,
         'adult': 0,
         'elderly': 0,}
+    
