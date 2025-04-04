@@ -1,8 +1,8 @@
 class AgePicker:
-    def __init__(self, toddler: int,adolescence: int,teen: int,adult:int,elderly: int):
+    def __init__(self, toddler: int,child: int,teen: int,adult:int,elderly: int):
         self.age_center = {
             'toddler': toddler,
-            'adolescence': adolescence,
+            'child': child,
             'teen': teen,
             'adult': adult,
             'elderly': elderly} 
@@ -10,8 +10,8 @@ class AgePicker:
     def add(self, age_center: str) -> None:
         if age_center == 'toddler':
             self.age_center['toddler'] = self.age_center.get('toddler') +1
-        if age_center == 'adolescence':
-            self.age_center['adolescence'] = self.age_center.get('adolescence') +1
+        if age_center == 'child':
+            self.age_center['child'] = self.age_center.get('adolescence') +1
         if age_center == 'teen':
             self.age_center['teen'] = self.age_center.get('teen') +1
         if age_center == 'adult':
@@ -34,7 +34,7 @@ class AgePicker:
 def clear(self) -> None:
     self.age_center = {
         'toddler': 0,
-        'adolescence': 0,
+        'child': 0,
         'teen': 0,
         'adult': 0,
         'elderly': 0,}
