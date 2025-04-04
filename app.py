@@ -62,7 +62,7 @@ def third_question():
         return render_template('question_3.html', answers = answers)
     
     if request.method == 'POST':
-        selected = request.form.get['selected']
+        selected = request.form['selected']
         if selected == answers[0]:
             age_picker.add('toddler')
         if selected == answers[1]:
@@ -78,7 +78,7 @@ def third_question():
     
 @app.route('/age')
 def get_age():
-    return 'YOU AREEEEEE' + age_picker.sort() + '!' + 'Congratulations or not...'
+    return 'YOU AREEEEEE ' + age_picker.sort() + '!' + ' Congratulations or not...'
 
 if __name__ == "__main__":
     app.run()
