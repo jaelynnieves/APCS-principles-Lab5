@@ -11,7 +11,7 @@ class AgePicker:
         if age_center == 'toddler':
             self.age_center['toddler'] = self.age_center.get('toddler') +1
         if age_center == 'child':
-            self.age_center['child'] = self.age_center.get('adolescence') +1
+            self.age_center['child'] = self.age_center.get('child') +1
         if age_center == 'teen':
             self.age_center['teen'] = self.age_center.get('teen') +1
         if age_center == 'adult':

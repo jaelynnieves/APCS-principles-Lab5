@@ -7,7 +7,7 @@ age_picker = AgePicker(0, 0, 0, 0, 0)
 
 @app.route('/')
 def home():
-    return "LETS GUESS YOUR AGEEEEEE!!!!!" 
+    return "LETS GUESS YOUR AGEEEEEE!!!!!"
 
 @app.route('/question/1', methods = ['GET', 'POST'])
 def first_question():
@@ -60,6 +60,51 @@ def third_question():
 
     if request.method == 'GET':
         return render_template('question_3.html', answers = answers)
+    
+    if request.method == 'POST':
+        selected = request.form['selected']
+        if selected == answers[0]:
+            age_picker.add('toddler')
+        if selected == answers[1]:
+            age_picker.add('child')
+        if selected == answers[2]:
+            age_picker.add('teen')
+        if selected == answers[3]:
+            age_picker.add('adult')
+        if selected == answers[4]:
+            age_picker.add('elderly')
+
+        return redirect('/question/4')
+
+    
+@app.route('/question/4', methods = ['GET','POST'])
+def fourth_question():
+    answers = ['Carters', 'Sephora', 'Lululemon', 'Old Navy', 'Macys']
+
+    if request.method == 'GET':
+        return render_template('question_4.html', answers = answers)
+    
+    if request.method == 'POST':
+        selected = request.form['selected']
+        if selected == answers[0]:
+            age_picker.add('toddler')
+        if selected == answers[1]:
+            age_picker.add('child')
+        if selected == answers[2]:
+            age_picker.add('teen')
+        if selected == answers[3]:
+            age_picker.add('adult')
+        if selected == answers[4]:
+            age_picker.add('elderly')
+        
+        return redirect('/question/5')
+    
+@app.route('/question/5', methods = ['GET','POST'])
+def fifth_question():
+    answers = ['Blippi', 'Ryan toys review', 'Justin Bieber', 'Leonardo Dicaprio', 'Paul Newman']
+
+    if request.method == 'GET':
+        return render_template('question_5.html', answers = answers)
     
     if request.method == 'POST':
         selected = request.form['selected']
